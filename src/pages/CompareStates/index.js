@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 
-import api from './api';
+import api from '../../services/api';
 
-import './App.css';
+import './styles.css';
 
-function App() {
+function CompareStates() {
   const [beforeDate, setBeforeDate] = useState({});
   const [afterDate, setAfterDate] = useState({});
   const [filterData, setFilterData] = useState(false);
@@ -160,4 +160,4 @@ function App() {
   );
 }
 
-export default App;
+export default CompareStates;
