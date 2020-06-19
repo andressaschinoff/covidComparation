@@ -31,6 +31,10 @@ function CompareStates() {
     const outputDate = format(parseISO(date), 'dd/MM/yyyy');
 
     try {
+      if (outputDate >= afterDate.outputDate) {
+        throw new Error('A data anterior deve ser maior que a data posterior');
+      }
+
       const response = await api.get(`/brazil/${formatedDate}`);
 
       const [selectedUF] = response.data.data.filter(
@@ -41,9 +45,11 @@ function CompareStates() {
       setBeforeDate({ outputDate, cases, deaths, suspects, refuses });
       setError('');
     } catch (error) {
-      setError(
-        `A data escolhida: ${outputDate} não possui dados, por favor, escolher outra :)`
-      );
+      const mensagemErro = error.message === "Cannot destructure property 'cases' of 'selectedUF' as it is undefined."
+        ? `A data escolhida: ${outputDate} não possui dados, por favor, escolher outra :)`
+        : error.message;
+
+      setError(mensagemErro);
     }
   }
 
@@ -54,7 +60,7 @@ function CompareStates() {
 
     try {
       if (outputDate <= beforeDate.outputDate) {
-        throw new Error('A data deve ser maior que a data anterior');
+        throw new Error('A data anterior deve ser maior que a data posterior');
       }
 
       const response = await api.get(`/brazil/${formatedDate}`);
@@ -110,9 +116,11 @@ function CompareStates() {
           name="after-date"
           onChange={(e) => handleAfterDate(e.target.value)}
         />
-        <button type="button" onClick={() => setFilterData(true)}>
+        {!error && ( !!beforeDate.outputDate && !!afterDate.outputDate) && (
+          <button type="button" onClick={() => setFilterData(true)}>
           Buscar
         </button>
+        )}
       </div>
       <div className="covid-list">
         <div className="covid-item">
