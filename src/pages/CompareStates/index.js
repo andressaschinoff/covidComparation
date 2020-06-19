@@ -53,6 +53,10 @@ function CompareStates() {
     const outputDate = format(parseISO(date), 'dd/MM/yyyy');
 
     try {
+      if (outputDate <= beforeDate.outputDate) {
+        throw new Error('A data deve ser maior que a data anterior');
+      }
+
       const response = await api.get(`/brazil/${formatedDate}`);
 
       const [selectedUF] = response.data.data.filter(
@@ -63,9 +67,11 @@ function CompareStates() {
       setAfterDate({ outputDate, cases, deaths, suspects, refuses });
       setError('');
     } catch (error) {
-      setError(
-        `A data escolhida: ${outputDate} não possui dados, por favor, escolher outra :)`
-      );
+      const mensagemErro = error.message === "Cannot destructure property 'cases' of 'selectedUF' as it is undefined."
+        ? `A data escolhida: ${outputDate} não possui dados, por favor, escolher outra :)`
+        : error.message;
+
+      setError(mensagemErro);
     }
   }
 
