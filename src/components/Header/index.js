@@ -15,7 +15,7 @@ const Header = () => {
           <img src={home} alt="Home Page" />
         </Link>
 
-        <Link to="/compareDate">
+        <Link to="/compareDates">
           <img src={compareDate} alt="Comparação de Datas" />
         </Link>
         

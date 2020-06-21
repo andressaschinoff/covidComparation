@@ -7,7 +7,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-function CompareStates() {
+function CompareDates() {
   const [beforeDate, setBeforeDate] = useState({});
   const [afterDate, setAfterDate] = useState({});
   const [filterData, setFilterData] = useState(false);
@@ -180,4 +180,4 @@ function CompareStates() {
   );
 }
 
-export default CompareStates;
+export default CompareDates;
