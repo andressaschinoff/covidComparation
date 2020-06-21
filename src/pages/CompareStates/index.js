@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 
+import Header from '../../components/Header';
+
 import api from '../../services/api';
 
 import './styles.css';
@@ -82,95 +84,99 @@ function CompareStates() {
   }
 
   return (
-    <div className="App">
-      {error && <div className="error-bar">{error}</div>}
-      <div className="heading">
-        <div className="select_box">
-          <select
-            name="uf"
-            value={ufSelector}
-            id="uf"
-            onChange={handleSelectUf}
-          >
-            <option key="selectUF" value="0">
-              Selecione uma UF
-            </option>
-            {ufs.map((uf) => (
-              <option key={uf} value={uf}>
-                {uf}
+    <>
+      <Header />
+
+      <div className="App">
+        {error && <div className="error-bar">{error}</div>}
+        <div className="heading">
+          <div className="select_box">
+            <select
+              name="uf"
+              value={ufSelector}
+              id="uf"
+              onChange={handleSelectUf}
+            >
+              <option key="selectUF" value="0">
+                Selecione uma UF
               </option>
-            ))}
-          </select>
+              {ufs.map((uf) => (
+                <option key={uf} value={uf}>
+                  {uf}
+                </option>
+              ))}
+            </select>
+          </div>
+          <span>UF</span>
+          <input
+            type="date"
+            id="before-date"
+            name="before-date"
+            onChange={(e) => handleBeforeDate(e.target.value)}
+          />
+          <span>ATÉ</span>
+          <input
+            type="date"
+            id="after-date"
+            name="after-date"
+            onChange={(e) => handleAfterDate(e.target.value)}
+          />
+          {!error && ( !!beforeDate.outputDate && !!afterDate.outputDate) && (
+            <button type="button" onClick={() => setFilterData(true)}>
+            Buscar
+          </button>
+          )}
         </div>
-        <span>UF</span>
-        <input
-          type="date"
-          id="before-date"
-          name="before-date"
-          onChange={(e) => handleBeforeDate(e.target.value)}
-        />
-        <span>ATÉ</span>
-        <input
-          type="date"
-          id="after-date"
-          name="after-date"
-          onChange={(e) => handleAfterDate(e.target.value)}
-        />
-        {!error && ( !!beforeDate.outputDate && !!afterDate.outputDate) && (
-          <button type="button" onClick={() => setFilterData(true)}>
-          Buscar
-        </button>
-        )}
-      </div>
-      <div className="covid-list">
-        <div className="covid-item">
-          <h3>Casos anteriores {filterData && `- ${beforeDate.outputDate}`}</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Casos</th>
-                <th>Mortes</th>
-                <th>Suspeitos</th>
-                <th>Descartados</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filterData && (
+        <div className="covid-list">
+          <div className="covid-item">
+            <h3>Casos anteriores {filterData && `- ${beforeDate.outputDate}`}</h3>
+            <table>
+              <thead>
                 <tr>
-                  <td>{beforeDate.cases}</td>
-                  <td>{beforeDate.deaths}</td>
-                  <td>{beforeDate.suspects}</td>
-                  <td>{beforeDate.refuses}</td>
+                  <th>Casos</th>
+                  <th>Mortes</th>
+                  <th>Suspeitos</th>
+                  <th>Descartados</th>
                 </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-        <div className="covid-item">
-          <h3>Casos posteriores {filterData && `- ${afterDate.outputDate}`}</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Casos</th>
-                <th>Mortes</th>
-                <th>Suspeitos</th>
-                <th>Descartados</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filterData && (
+              </thead>
+              <tbody>
+                {filterData && (
+                  <tr>
+                    <td>{beforeDate.cases}</td>
+                    <td>{beforeDate.deaths}</td>
+                    <td>{beforeDate.suspects}</td>
+                    <td>{beforeDate.refuses}</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+          <div className="covid-item">
+            <h3>Casos posteriores {filterData && `- ${afterDate.outputDate}`}</h3>
+            <table>
+              <thead>
                 <tr>
-                  <td>{afterDate.cases}</td>
-                  <td>{afterDate.deaths}</td>
-                  <td>{afterDate.suspects}</td>
-                  <td>{afterDate.refuses}</td>
+                  <th>Casos</th>
+                  <th>Mortes</th>
+                  <th>Suspeitos</th>
+                  <th>Descartados</th>
                 </tr>
-              )}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {filterData && (
+                  <tr>
+                    <td>{afterDate.cases}</td>
+                    <td>{afterDate.deaths}</td>
+                    <td>{afterDate.suspects}</td>
+                    <td>{afterDate.refuses}</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

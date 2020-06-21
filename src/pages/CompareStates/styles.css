@@ -1,10 +1,11 @@
 .App {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-flow: column wrap;
   min-height: 100vh;
   background-color: #eee;
+  padding-top: 24px;
 }
 
 .error-bar {
@@ -20,7 +21,7 @@
 
 .heading {
   background: white;
-  padding: 32px;
+  /* padding: 32px; */
   display: flex;
 }
 
