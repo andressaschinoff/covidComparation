@@ -3,7 +3,7 @@
 
 
 <h1 align="justify"> Sobre o Projeto</h1>
-O Covid Corporation é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
+O **Covid Corporison** é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
 
 ---
 
@@ -23,16 +23,21 @@ O grande intuito é amparar à população em meio a esta situação de crise de
 
 
 
-<h1 align="justify">🚀 Tecnologias Utilizadas</h1>
-O projeto foi desenvolvido utilizando as seguintes tecnologias
-ReactJS
-TypeScript
-Padronização de código
-ESLint
-Prettier
-🐭 Editor Config
-IDE
-Visual Studio Code
+## :rocket: Tecnologias Utilizadas
+
+- [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+### Padronização de código
+
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- :mouse: [Editor Config](https://editorconfig.org/)
+
+### IDE
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+
 
 ----
 <h1> Layout ou Deploy da Aplicação 💨 </h1>
