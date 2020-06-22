@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { Container, Content } from './styles';
 
 import home from '../../assets/company.svg'
-import compareDate from '../../assets/compare.svg'
+import compareDates from '../../assets/compare.svg'
 import singleDate from '../../assets/market.svg'
+import compareStates from '../../assets/advantages.svg';
 
 const Header = () => {
   return (
@@ -16,7 +17,11 @@ const Header = () => {
         </Link>
 
         <Link to="/compareDates">
-          <img src={compareDate} alt="Comparação de Datas" />
+          <img src={compareDates} alt="Comparação de Datas" />
+        </Link>
+
+        <Link to="/compareStates">
+          <img src={compareStates} alt="Comparação de Estados" />
         </Link>
         
         <Link to="/singleDate">
