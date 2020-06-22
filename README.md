@@ -1,68 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"> <img src="https://img.shields.io/static/v1?label=React&message=framework&color=blue&style=for-the-badge&logo=React"/>
+<img src="https://img.shields.io/static/v1?label=JavaScript&message=framework&color=blue&style=for-the-badge&logo=JavaScript"/></p>
 
-## Available Scripts
 
-In the project directory, you can run:
+<h1 align="justify"> Sobre o Projeto</h1>
+O Covid Corporation é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
 
-### `yarn start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h1 align="justify"> ⁉️ Motivo</h1>
+Levando em consideração o cenário de Pandemia, e a preocupação constante devido ao aumento da curva de contágio do Vírus, desenvolvemos uma aplicação Web para trazer esses dados, que se atualizam em tempo real.
+O grande intuito é amparar à população em meio a esta situação de crise de Saúde Pública através de um Portal Web com ferramentas que apresentem informações da atual situação do contágio em todo o território nacional. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+----
 
-### `yarn test`
+<h1 align="justify"> Funcionalidades</h1>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p> ✔️ Funcionalidade 1 - Page informativa com cuidados para evitar o contagio e sintomas do Covid - 19.</p> 
 
-### `yarn build`
+<p> ✔️ Funcionalidade 2 - Filtro com número pessoas infectadas em todo o território nacional.</p> 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p> ✔️ Funcionalidade 3 - Filtro comparativo entre os entrados brasileiros. </p> 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+<h1 align="justify">🚀 Tecnologias Utilizadas</h1>
+O projeto foi desenvolvido utilizando as seguintes tecnologias
+ReactJS
+TypeScript
+Padronização de código
+ESLint
+Prettier
+🐭 Editor Config
+IDE
+Visual Studio Code
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+----
+<h1> Layout ou Deploy da Aplicação 💨 </h1>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+----
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<h1> Linguagens, dependencias e libs utilizadas 📚 </h1>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📦 Como baixar o projeto
+Para copiar o projeto, utilize os comandos:
+ # Clonar o repositório
+  ❯ https://github.com/Tech-Ninjas-DIOX/covidComparation.git
 
-### Code Splitting
+  # Entrar no diretório
+  ❯ cd front-covidComparation
+Para instalar as dependências e iniciar o projeto, você pode utilizar o Yarn ou NPM:
+Utilizando yarn
+ # Instalar as dependências
+  ❯ yarn
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  # Iniciar o projeto
+  ❯ yarn start
+Utilizando npm
+PS: Caso utilize o NPM, apague o arquivo yarn.lock para ter todas as dependências instaladas da melhor forma.
+ # Instalar as dependências
+  ❯ npm install
 
-### Analyzing the Bundle Size
+  # Iniciar o projeto
+  ❯ npm start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+🔗 Como contribuir
+Faça um Fork do repositório.
+Faça um clone do seu repositório gerado do fork:
+❯ git clone https://github.com/Tech-Ninjas-DIOX/covidComparation.git
+Antes de começar a trabalhar, adicione um novo remote; pode chamá-lo de "upstream":
+❯ git remote add upstream https://github.com/Tech-Ninjas-DIOX/covidComparation.git
+Obtenha as alterações mais recentes do upstream para o repositório local:
+❯ git pull upstream master
+Crie uma branch com sua feature:
+❯ git checkout -b NOME_DA_BRANCH
+Adicione todas as suas mudanças:
+❯ git add -A ou ❯ git add .
+Confirme suas alterações com um commit das mudanças:
+❯ git commit -m "Descrição sobre as mudanças"
+Envie a sua branch com as alterações:
+❯ git push origin NOME_DA_BRANCH
+Ir em Pull Requests do seu projeto ou projeto original e criar uma pull request.
 
-### Making a Progressive Web App
+♻️ Como atualizar seu fork com as mudanças do original
+Certifique-se de que você está no branch master:
+❯ git checkout master
+Obtenha as alterações mais recentes do upstream para o repositório local:
+❯ git pull upstream master
+Leve as alterações do seu repositório local para a "origem":
+❯ git push origin master
+*PS: Talvez você precise forçar um push para o seu próprio repositório do Github. Você pode fazer isso com:
+❯ git push -f origin master
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
