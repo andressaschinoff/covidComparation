@@ -19,7 +19,7 @@ O grande intuito é amparar à população em meio a esta situação de crise de
 
 <p> ✔️ Funcionalidade 2 - Filtro com número pessoas infectadas em todo o território nacional.</p> 
 
-<p> ✔️ Funcionalidade 3 - Filtro comparativo entre os entrados brasileiros. </p> 
+<p> ✔️ Funcionalidade 3 - Filtro comparativo entre os estados brasileiros. </p> 
 
 
 
