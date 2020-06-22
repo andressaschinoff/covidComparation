@@ -6,14 +6,12 @@ import 'react-day-picker/lib/style.css';
 import api from '../../services/api';
 import Header from '../../components/Header';
 
-import { Container, Heading, FilterContainer, Calendar, CovidList, CovidItem, Select } from './styles';
+import { Container, Heading, FilterContainer, Calendar, CovidList, CovidItem } from './styles';
 
-const CompareStates = () => {
+const SingleState = () => {
   const [ufs, setUfs] = useState([]);
-  const [firstUfSelected, setFirstUfSelected] = useState('');
-  const [secondUfSelected, setSecondUfSelected] = useState('');
-  const [firstResults, setFirstResults] = useState({});
-  const [secondResults, setSecondResults] = useState({});
+  const [ufSelected, setUfSelected] = useState('');
+  const [results, setResults] = useState({});
   const [error, setError] = useState('');
   const [dateSelected, setDateSelected] = useState(new Date());
 
@@ -37,8 +35,9 @@ const CompareStates = () => {
     });
   }, []);
 
-  const handleFirstSelectedUf = useCallback(async (event, position) => {
+  const handleSelectedUf = useCallback(async (event) => {
     const uf = event.target.value;
+    setUfSelected(uf);
 
     try {
       const response = await api.get();
@@ -46,8 +45,7 @@ const CompareStates = () => {
       const [selectedUF] = response.data.data
         .filter((item) => item.uf === uf);
 
-      position === 1 ? setFirstResults(selectedUF) : setSecondResults(selectedUF);
-      position === 1 ? setFirstUfSelected(uf) : setSecondUfSelected(uf);
+      setResults(selectedUF)
       setError('');
     } catch (err) {
       const mensagemErro = err.message === "Cannot destructure property 'cases' of 'selectedUF' as it is undefined."
@@ -63,27 +61,25 @@ const CompareStates = () => {
     const outputDate = format(date, 'dd/MM/yyyy');
 
     try {
-      if (!firstUfSelected && !secondUfSelected) {
+      if (!ufSelected) {
         throw new Error('😣️ Por favor, escolha um Estado!');
       }
       
       const response = await api.get(`/brazil/${formatedDate}`);
       
-      const [firstSelectedUF] = response.data.data.filter((item) => item.uf === firstUfSelected);
-      const [secondSelectedUF] = response.data.data.filter((item) => item.uf === secondUfSelected);
+      const [selectedUF] = response.data.data.filter((item) => item.uf === ufSelected);
       
-      if (!firstSelectedUF || !secondSelectedUF) {
+      if (!selectedUF) {
         throw new Error(`😳️ A data escolhida: ${outputDate} não possui dados, por favor, escolher outra 🙂️`);
       }
 
-      setFirstResults(firstSelectedUF);
-      setSecondResults(secondSelectedUF);
+      setResults(selectedUF)
       setDateSelected(outputDate);
       setError('');
     } catch (err) {
       setError(err.message);
     }
-  }, [firstUfSelected, secondUfSelected]);
+  }, [ufSelected]);
 
   return (
     <>
@@ -92,30 +88,19 @@ const CompareStates = () => {
       <Container>
         <Heading>
           {error && <div className="error-bar" >{error}</div>}
-          <h1>
-            Casos por Estado no dia {isDate(dateSelected) ? format(dateSelected, 'dd/MM/yyyy') : dateSelected}
-          </h1>
+          {!ufSelected ? (<h1> Casos por Estado</h1>) : (
+            <h1>
+              Casos do estado {results?.state} no dia {isDate(dateSelected) ? format(dateSelected, 'dd/MM/yyyy') : dateSelected}
+            </h1>
+          )}
           
           <FilterContainer>
-            <Select>
-              <label htmlFor="uf">Selecione o 1º Estado</label>
-              <select name="uf" value={firstUfSelected} onChange={(e) => handleFirstSelectedUf(e, 1)}>
-                <option value="0">Selecione o 1º Estado</option>
-                {ufs.map((uf) => (
-                  <option key={uf.id} value={uf.uf}>{uf.name}</option>
-                ))}
-              </select>
-            {/* </Select>
-
-            <Select> */}
-              <label htmlFor="uf">Selecione o 2º Estado</label>
-              <select name="uf" value={secondUfSelected} onChange={(e) => handleFirstSelectedUf(e, 2)}>
-                <option value="0">Selecione o 2º Estado</option>
-                {ufs.map((uf) => (
-                  <option key={uf.id} value={uf.uf}>{uf.name}</option>
-                ))}
-              </select>
-            </Select>
+            <select name="uf" value={ufSelected} onChange={handleSelectedUf}>
+              <option value="0">Selecione um Estado</option>
+              {ufs.map((uf) => (
+                <option key={uf.id} value={uf.uf}>{uf.name}</option>
+              ))}
+            </select>
 
             <Calendar>
               <DayPicker
@@ -143,10 +128,9 @@ const CompareStates = () => {
           </FilterContainer>
         </Heading>
 
-        {!error && (firstResults?.datetime) && (
+        {!error && (results?.datetime) && (
           <CovidList>
             <CovidItem>
-              <h3>Casos do estado {firstResults.state}</h3>
               <table>
                 <thead>
                   <tr>
@@ -158,39 +142,14 @@ const CompareStates = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{firstResults.cases}</td>
-                    <td>{firstResults.deaths}</td>
-                    <td>{firstResults.suspects}</td>
-                    <td>{firstResults.refuses}</td>
+                    <td>{results.cases}</td>
+                    <td>{results.deaths}</td>
+                    <td>{results.suspects}</td>
+                    <td>{results.refuses}</td>
                   </tr>
                 </tbody>
               </table>
             </CovidItem>
-
-            {!error && (secondResults?.datetime) && (
-              <CovidItem>
-                <h3>Casos do estado {secondResults.state}</h3>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Casos</th>
-                      <th>Mortes</th>
-                      <th>Suspeitos</th>
-                      <th>Descartados</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{secondResults.cases}</td>
-                      <td>{secondResults.deaths}</td>
-                      <td>{secondResults.suspects}</td>
-                      <td>{secondResults.refuses}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </CovidItem>
-            )}
-            
           </CovidList>
         )}
       </Container>
@@ -198,4 +157,4 @@ const CompareStates = () => {
   );
 }
 
-export default CompareStates;
+export default SingleState;
