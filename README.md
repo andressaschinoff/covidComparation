@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/static/v1?label=TypeScript&message=framework&color=blue&style=for-the-badge&logo=TypeScript"/></p>
 
 <h1 align="justify"> Sobre o Projeto</h1>
-O **Covid Corporison** é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
+O Covid Corporison é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
 
 ---
 
