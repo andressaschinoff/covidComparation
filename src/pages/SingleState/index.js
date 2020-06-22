@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { format } from 'date-fns';
-import { zonedTimeToUtc } from 'date-fns-tz';
+import { format, isDate } from 'date-fns';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
@@ -50,7 +49,7 @@ const SingleState = () => {
       setError('');
     } catch (err) {
       const mensagemErro = err.message === "Cannot destructure property 'cases' of 'selectedUF' as it is undefined."
-        ? `A data escolhida: ${dateSelected} não possui dados, por favor, escolher outra :)`
+        ? `😳️ A data escolhida: ${dateSelected} não possui dados, por favor, escolher outra 🙂️`
         : err.message;
 
       setError(mensagemErro);
@@ -63,7 +62,7 @@ const SingleState = () => {
 
     try {
       if (!ufSelected) {
-        throw new Error('Por favor, escolha um Estado!');
+        throw new Error('😣️ Por favor, escolha um Estado!');
       }
       
       const response = await api.get(`/brazil/${formatedDate}`);
@@ -71,7 +70,7 @@ const SingleState = () => {
       const [selectedUF] = response.data.data.filter((item) => item.uf === ufSelected);
       
       if (!selectedUF) {
-        throw new Error(`A data escolhida: ${outputDate} não possui dados, por favor, escolher outra :)`);
+        throw new Error(`😳️ A data escolhida: ${outputDate} não possui dados, por favor, escolher outra 🙂️`);
       }
 
       setResults(selectedUF)
@@ -89,7 +88,11 @@ const SingleState = () => {
       <Container>
         <Heading>
           {error && <div className="error-bar" >{error}</div>}
-          <h1>Casos por Estado</h1>
+          {!ufSelected ? (<h1> Casos por Estado</h1>) : (
+            <h1>
+              Casos do estado {results?.state} no dia {isDate(dateSelected) ? format(dateSelected, 'dd/MM/yyyy') : dateSelected}
+            </h1>
+          )}
           
           <FilterContainer>
             <select name="uf" value={ufSelected} onChange={handleSelectedUf}>
@@ -128,7 +131,6 @@ const SingleState = () => {
         {!error && (results?.datetime) && (
           <CovidList>
             <CovidItem>
-              <h3>Casos do estado {results.state} no dia {format(zonedTimeToUtc(results.datetime), 'dd/MM/yyyy')}</h3>
               <table>
                 <thead>
                   <tr>

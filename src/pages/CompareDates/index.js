@@ -34,7 +34,7 @@ function CompareDates() {
 
     try {
       if (outputDate >= afterDate.outputDate) {
-        throw new Error('A data anterior deve ser maior que a data posterior');
+        throw new Error('😣️ A data anterior deve ser maior que a data posterior');
       }
 
       const response = await api.get(`/brazil/${formatedDate}`);
@@ -48,7 +48,7 @@ function CompareDates() {
       setError('');
     } catch (error) {
       const mensagemErro = error.message === "Cannot destructure property 'cases' of 'selectedUF' as it is undefined."
-        ? `A data escolhida: ${outputDate} não possui dados, por favor, escolher outra :)`
+        ? `🤔️ A data escolhida: ${outputDate} não possui dados, por favor, escolher outra 🙂️`
         : error.message;
 
       setError(mensagemErro);
@@ -62,7 +62,7 @@ function CompareDates() {
 
     try {
       if (outputDate <= beforeDate.outputDate) {
-        throw new Error('A data anterior deve ser maior que a data posterior');
+        throw new Error('😣️ A data anterior deve ser maior que a data posterior');
       }
 
       const response = await api.get(`/brazil/${formatedDate}`);
@@ -76,7 +76,7 @@ function CompareDates() {
       setError('');
     } catch (error) {
       const mensagemErro = error.message === "Cannot destructure property 'cases' of 'selectedUF' as it is undefined."
-        ? `A data escolhida: ${outputDate} não possui dados, por favor, escolher outra :)`
+        ? `🤔️ A data escolhida: ${outputDate} não possui dados, por favor, escolher outra 🙂️`
         : error.message;
 
       setError(mensagemErro);
