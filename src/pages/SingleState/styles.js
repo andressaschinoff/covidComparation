@@ -6,7 +6,7 @@ import img from '../../assets/background_pesquisa.png';
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   flex-flow: column wrap;
