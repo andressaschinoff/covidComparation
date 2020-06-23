@@ -8,6 +8,8 @@
 <h1 align="justify"> Sobre o Projeto</h1>
 O Covid Corporison é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
 
+---
+
 > Status do Projeto: Em desenvolvimento :warning:
 
 ---
