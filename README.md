@@ -1,11 +1,15 @@
- ![Capturar JPG1](https://user-images.githubusercontent.com/59574875/85342988-34c1e980-b4c2-11ea-99e1-47aa65591289.JPG)
+ <p align="center"><img src= "https://user-images.githubusercontent.com/59574875/85342988-34c1e980-b4c2-11ea-99e1-47aa65591289.JPG"></p>
 
+---
 
 <p align="center"> <img src="https://img.shields.io/static/v1?label=React&message=framework&color=blue&style=for-the-badge&logo=React"/>
-<img src="https://img.shields.io/static/v1?label=JavaScript&message=framework&color=blue&style=for-the-badge&logo=JavaScript"/>
-<img src="https://img.shields.io/static/v1?label=TypeScript&message=framework&color=blue&style=for-the-badge&logo=TypeScript"/></p>
+<img src="https://img.shields.io/static/v1?label=JavaScript&message=language&color=blue&style=for-the-badge&logo=JavaScript"/>
+</p>
 
-<h1 align="justify"> Sobre o Projeto</h1>
+---
+
+## :information_source: Sobre o Projeto
+
 O Covid Corporison é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
 
 ---
@@ -14,26 +18,26 @@ O Covid Corporison é uma aplicação que visa realizar uma amostragem do avanç
 
 ---
 
-<h1 align="justify"> ⁉️ Motivo</h1>
+## :interrobang: Motivo
+
 Levando em consideração o cenário de Pandemia, e a preocupação constante devido ao aumento da curva de contágio do Vírus, desenvolvemos uma aplicação Web para trazer esses dados, que se atualizam em tempo real.
-O grande intuito é amparar à população em meio a esta situação de crise de Saúde Pública através de um Portal Web com ferramentas que apresentem informações da atual situação do contágio em todo o território nacional. 
+O grande intuito é amparar à população em meio a esta situação de crise de Saúde Pública através de um Portal Web com ferramentas que apresentem informações da atual situação do contágio em todo o território nacional.
 
-----
+---
 
-<h1 align="justify"> Funcionalidades</h1>
+## Funcionalidades
 
-<p> ✔️ Funcionalidade 1 - Page informativa com cuidados para evitar o contagio e sintomas do Covid - 19.</p> 
+<p> ✔️ Funcionalidade 1 - Page informativa com cuidados para evitar o contagio e sintomas do Covid - 19.</p>
 
-<p> ✔️ Funcionalidade 2 - Filtro com número pessoas infectadas em todo o território nacional.</p> 
+<p> ✔️ Funcionalidade 2 - Filtro com número pessoas infectadas em todo o território nacional.</p>
 
-<p> ✔️ Funcionalidade 3 - Filtro comparativo entre os estados brasileiros. </p> 
+<p> ✔️ Funcionalidade 3 - Filtro comparativo entre os estados brasileiros. </p>
 
-
+---
 
 ## :rocket: Linguagens, dependencias e libs utilizadas 📚
 
 - [ReactJS](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
 
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
@@ -41,22 +45,24 @@ O grande intuito é amparar à população em meio a esta situação de crise de
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
+---
 
-----
 ## Layout ou Deploy da Aplicação 💨 </h1>
 
-----
+---
+
 ## :package: Como baixar o projeto
 
 Para copiar o projeto, utilize os comandos:
 
 ```bash
   # Clonar o repositório
-  ❯ git clone https://github.com/Tech-Ninjas-DIOX/front-entenda-direito.git
+  ❯ git clone https://github.com/Tech-Ninjas-DIOX/covidComparation.git
 
   # Entrar no diretório
-  ❯ cd front-entenda-direito
+  ❯ cd covidComparation
 ```
+
 Para instalar as dependências e iniciar o projeto, você pode utilizar o Yarn ou NPM:
 
 **Utilizando yarn**
@@ -71,7 +77,7 @@ Para instalar as dependências e iniciar o projeto, você pode utilizar o Yarn o
 
 **Utilizando npm**
 
-*PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependências instaladas da melhor forma.*
+_PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependências instaladas da melhor forma._
 
 ```bash
   # Instalar as dependências
@@ -88,7 +94,7 @@ Para instalar as dependências e iniciar o projeto, você pode utilizar o Yarn o
 - Faça um `Fork` do repositório.
 - Faça um clone do seu respositório gerado do fork:
   - `❯ git clone https://github.com/SEU_USUARIO/covidComparation`
-- Antes de começar a trabalhar, adicione um novo remote; pode chamá-lo de *"upstream"*:
+- Antes de começar a trabalhar, adicione um novo remote; pode chamá-lo de _"upstream"_:
   - `❯ git remote add upstream https://github.com/Tech-Ninjas-DIOX/covidComparation`
 - Obtenha as alterações mais recentes do upstream para o repositório local:
   - `❯ git pull upstream master`
@@ -110,16 +116,12 @@ Para instalar as dependências e iniciar o projeto, você pode utilizar o Yarn o
   - `❯ git checkout master`
 - Obtenha as alterações mais recentes do upstream para o repositório local:
   - `❯ git pull upstream master`
-- Leve as alterações do seu repositório local para a *"origem"*:
+- Leve as alterações do seu repositório local para a _"origem"_:
   - `❯ git push origin master`
 
-*PS: Talvez você precise forçar um push para o seu próprio repositório do Github. Você pode fazer isso com:
-  - `❯ git push -f origin master`
+\*PS: Talvez você precise forçar um push para o seu próprio repositório do Github. Você pode fazer isso com:
 
----
-
-## :memo: Licença
-Esse projeto está sob a licença GPL. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+- `❯ git push -f origin master`
 
 ---
 
