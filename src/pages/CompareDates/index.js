@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { format, parseISO } from 'date-fns';
 
-import Header from '../../components/Header';
-
 import api from '../../services/api';
 
 import './styles.css';
@@ -84,99 +82,97 @@ function CompareDates() {
   }
 
   return (
-    <>
-      <Header />
-
-      <div className="App">
-        {error && <div className="error-bar">{error}</div>}
-        <div className="heading">
-          <div className="select_box">
-            <select
-              name="uf"
-              value={ufSelector}
-              id="uf"
-              onChange={handleSelectUf}
-            >
-              <option key="selectUF" value="0">
-                Selecione uma UF
+    <div className="App">
+      {error && <div className="error-bar">{error}</div>}
+      <div className="heading">
+        <div className="select_box">
+          <select
+            name="uf"
+            value={ufSelector}
+            id="uf"
+            onChange={handleSelectUf}
+          >
+            <option key="selectUF" value="0">
+              Selecione uma UF
+            </option>
+            {ufs.map((uf) => (
+              <option key={uf} value={uf}>
+                {uf}
               </option>
-              {ufs.map((uf) => (
-                <option key={uf} value={uf}>
-                  {uf}
-                </option>
-              ))}
-            </select>
-          </div>
-          <span>UF</span>
-          <input
-            type="date"
-            id="before-date"
-            name="before-date"
-            onChange={(e) => handleBeforeDate(e.target.value)}
-          />
-          <span>ATÉ</span>
-          <input
-            type="date"
-            id="after-date"
-            name="after-date"
-            onChange={(e) => handleAfterDate(e.target.value)}
-          />
-          {!error && ( !!beforeDate.outputDate && !!afterDate.outputDate) && (
-            <button type="button" onClick={() => setFilterData(true)}>
-            Buscar
-          </button>
-          )}
+            ))}
+          </select>
         </div>
-        <div className="covid-list">
-          <div className="covid-item">
-            <h3>Casos anteriores {filterData && `- ${beforeDate.outputDate}`}</h3>
-            <table>
-              <thead>
+        <span>UF</span>
+        <input
+          type="date"
+          id="before-date"
+          name="before-date"
+          onChange={(e) => handleBeforeDate(e.target.value)}
+        />
+        <span>ATÉ</span>
+        <input
+          type="date"
+          id="after-date"
+          name="after-date"
+          onChange={(e) => handleAfterDate(e.target.value)}
+        />
+        {!error && ( !!beforeDate.outputDate && !!afterDate.outputDate) && (
+          <button type="button" onClick={() => setFilterData(true)}>
+          Buscar
+        </button>
+        )}
+      </div>
+      <div className="covid-list">
+        <div className="covid-item">
+          <h3>Casos anteriores {filterData && `- ${beforeDate.outputDate}`}</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Casos</th>
+                <th>Mortes</th>
+                <th>Suspeitos</th>
+                <th>Descartados</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filterData && (
                 <tr>
-                  <th>Casos</th>
-                  <th>Mortes</th>
-                  <th>Suspeitos</th>
-                  <th>Descartados</th>
+                  <td>{beforeDate.cases}</td>
+                  <td>{beforeDate.deaths}</td>
+                  <td>{beforeDate.suspects}</td>
+                  <td>{beforeDate.refuses}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {filterData && (
-                  <tr>
-                    <td>{beforeDate.cases}</td>
-                    <td>{beforeDate.deaths}</td>
-                    <td>{beforeDate.suspects}</td>
-                    <td>{beforeDate.refuses}</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-          <div className="covid-item">
-            <h3>Casos posteriores {filterData && `- ${afterDate.outputDate}`}</h3>
-            <table>
-              <thead>
+              )}
+            </tbody>
+          </table>
+        </div>
+        <div className="covid-item">
+          <h3>Casos posteriores {filterData && `- ${afterDate.outputDate}`}</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Casos</th>
+                <th>Mortes</th>
+                <th>Suspeitos</th>
+                <th>Descartados</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filterData && (
                 <tr>
-                  <th>Casos</th>
-                  <th>Mortes</th>
-                  <th>Suspeitos</th>
-                  <th>Descartados</th>
+                  <td>{afterDate.cases}</td>
+                  <td>{afterDate.deaths}</td>
+                  <td>{afterDate.suspects}</td>
+                  <td>{afterDate.refuses}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {filterData && (
-                  <tr>
-                    <td>{afterDate.cases}</td>
-                    <td>{afterDate.deaths}</td>
-                    <td>{afterDate.suspects}</td>
-                    <td>{afterDate.refuses}</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
-    </>
+
+      <svg className="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fillOpacity="1" d="M0,96L48,85.3C96,75,192,53,288,53.3C384,53,480,75,576,101.3C672,128,768,160,864,149.3C960,139,1056,85,1152,85.3C1248,85,1344,139,1392,165.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/></svg>
+    </div>
   );
 }
 

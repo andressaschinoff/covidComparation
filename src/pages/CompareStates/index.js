@@ -4,7 +4,6 @@ import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 import api from '../../services/api';
-import Header from '../../components/Header';
 
 import { Container, Heading, FilterContainer, Calendar, CovidList, CovidItem, Select } from './styles';
 
@@ -87,13 +86,11 @@ const CompareStates = () => {
 
   return (
     <>
-      <Header />
-      
       <Container>
         <Heading>
           {error && <div className="error-bar" >{error}</div>}
           <h1>
-            Casos por Estado no dia {isDate(dateSelected) ? format(dateSelected, 'dd/MM/yyyy') : dateSelected}
+            Comparação dos Estados no dia {isDate(dateSelected) ? format(dateSelected, 'dd/MM/yyyy') : dateSelected}
           </h1>
           
           <FilterContainer>
@@ -105,9 +102,7 @@ const CompareStates = () => {
                   <option key={uf.id} value={uf.uf}>{uf.name}</option>
                 ))}
               </select>
-            {/* </Select>
-
-            <Select> */}
+            
               <label htmlFor="uf">Selecione o 2º Estado</label>
               <select name="uf" value={secondUfSelected} onChange={(e) => handleFirstSelectedUf(e, 2)}>
                 <option value="0">Selecione o 2º Estado</option>
@@ -193,6 +188,8 @@ const CompareStates = () => {
             
           </CovidList>
         )}
+        
+        <svg className="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#88a8fc" fillOpacity="1" d="M0,96L48,85.3C96,75,192,53,288,53.3C384,53,480,75,576,101.3C672,128,768,160,864,149.3C960,139,1056,85,1152,85.3C1248,85,1344,139,1392,165.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/></svg>
       </Container>
     </>
   );

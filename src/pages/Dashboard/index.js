@@ -1,76 +1,55 @@
 import React from 'react';
 
-import {
-  Container,
-  Content,
-  Schedule,
-  NextAppointment,
-  Section,
-  Appointment,
-} from './styles';
+import { Container } from './styles';
 
-import Header from '../../components/Header';
+import CompareStates from '../CompareStates';
+import CompareDates from '../CompareDates';
+import SingleDate from '../SingleDate';
+import Tips from '../Tips';
 
-import covid from '../../assets/covid.svg';
-import sick from '../../assets/sick.svg';
-import pain from '../../assets/pain.svg';
+import logo from '../../assets/logo.png';
 
-const Dashboard = () => {
+const Dashboard=() => {
   return (
     <Container>
-      <Header />
+      <section className="navTop">
+        <img id="toggleNavTop" src="./img/menu.svg" alt="Menu List" />
+        <a href="#tips" className="navLink">Dicas de proteção</a>
+        <a href="#compareStates" className="navLink">Comparação de Estados</a>
+        <a href="#compareDates" className="navLink">Comparação de Datas</a>
+        <a href="#singleDate" className="navLink">Dados por Estado</a>
+      </section>
 
-      <Content>
-        <Schedule>
-          <p>
-            <em>
-              "A Covid 19 afeta diferentes pessoas de diferentes maneiras. Por este motivo, Proteja a si mesmo, e as pessoas ao seu redor conhecendo os números de infectados, e tomando as precauções apropriadas."
-            </em>
-          </p>
+      <section className="description">
+        <header className="header">
+          <img src={logo} width="300px" height="150px" alt="Covid Comparison" />
+        </header>
+        <h1 className="title">
+          "A Covid 19 afeta diferentes pessoas de diferentes maneiras.
+          Por este motivo, Proteja a si mesmo, e as pessoas ao seu redor conhecendo
+          os números de infectados, e tomando as precauções apropriadas."
+        </h1>
+      </section>
 
-          <NextAppointment>
-            <strong>Para evitar a propagação do Covid - 19:</strong>
-            <div>
-              <img src={covid} alt="Lavar as mãos" />
+      <section id="tips">
+        <Tips />
+      </section>
 
-              <strong>Lave as mãos frequentemente,</strong>
-              <ul>
-                <li>Usar o cotovelo para cobrir a tosse</li>
-                <li>Evite tocar o rosto</li>
-                <li>Mantenha  distancia segura</li>
-                <li>Fique em casa, se possível</li>
-              </ul>
-            </div>
-          </NextAppointment>
+      <section id="compareStates">
+        <CompareStates />
+      <svg className="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#88a8fc" fillOpacity="1" d="M0,96L48,85.3C96,75,192,53,288,53.3C384,53,480,75,576,101.3C672,128,768,160,864,149.3C960,139,1056,85,1152,85.3C1248,85,1344,139,1392,165.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/></svg>
 
-          <Section>
-            <strong>Sintomas mais comuns</strong>
+      </section>
 
-            <Appointment>
-              <div>
-                <img src={sick} alt="Febre" />
+      <section id="compareDates">
+        <CompareDates />
+      </section>
 
-                <strong>Febre, tosse seca, cansaço</strong>
-              </div>
-            </Appointment>
-          </Section>
-
-          <Section>
-            <strong>Sintomas menos comuns</strong>
-
-            <Appointment>
-              <div>
-                <img src={pain} alt="Dores e desconfortos" />
-
-                <strong>Dores e desconfortos, dor de garganta, diarreia, conjuntivite e perda do paladar ou olfato</strong>
-              </div>
-            </Appointment>
-          </Section>
-        </Schedule>
-      </Content>
+      <section id="singleDate">
+        <SingleDate />
+      </section>
     </Container>
   );
-
 };
 
 export default Dashboard;

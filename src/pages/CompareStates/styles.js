@@ -1,19 +1,25 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-import img from '../../assets/background_pesquisa.png';
-
 export const Container = styled.div`
-  /* width: 100%; */
+  grid-area: compareStates;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-
   flex-flow: column wrap;
-  min-height: 100vh;
 
-  background: url(${img}) no-repeat center;
-  background-size: 100%;
+  min-height: 100vh;
+  height: auto;
+  
+  padding-top: 56px;
+
+  background-color: #61fcc3;
+  background-image: linear-gradient(360deg, #80ff72 0%, #61fcc3 74%);
+
+  .wave{
+    background-attachment: center;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const Heading = styled.div`
@@ -21,8 +27,11 @@ export const Heading = styled.div`
   flex-direction: column;
   align-items: center;
 
-  position: relative;
-  left: -280px;
+  border-radius: 20px;
+
+  h1 {
+    margin-bottom: 16px;
+  }
 
   select {
     margin-right: 16px;
@@ -34,7 +43,7 @@ export const FilterContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: 100%;
+  width: 600px;
 `;
 
 export const Select = styled.div`
@@ -49,14 +58,15 @@ export const Select = styled.div`
 `;
 
 export const CovidList = styled.div`
-  position: relative;
-  left: -250px;
-
-  max-width: 1114px;
   display: flex;
+  margin-top: 24px;
 
   div {
     margin-left: 24px;
+    
+    h3 {
+      margin-bottom: 8px;
+    }
   }
 `;
 
@@ -72,6 +82,7 @@ export const Calendar = styled.aside`
   }
   .DayPicker-wrapper {
     padding-bottom: 0;
+    position: unset;
   }
   .DayPicker,
   .DayPicker-Month {
