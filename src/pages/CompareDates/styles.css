@@ -1,11 +1,23 @@
 .App {
-  display: flex;
-  /* justify-content: center; */
+  /* display: flex;
+  justify-content: center;
   align-items: center;
   flex-flow: column wrap;
+  min-height: 100%;
+  background-color: #eee; */
+  grid-area: compareDates;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-flow: column wrap;
+
   min-height: 100vh;
-  background-color: #eee;
-  padding-top: 24px;
+  height: auto;
+  
+  padding-top: 56px;
+
+  background-color: #88a8fc;
+  background-image: linear-gradient(360deg, #fff 0%, #88a8fc 90%);
 }
 
 .error-bar {
@@ -21,7 +33,7 @@
 
 .heading {
   background: white;
-  /* padding: 32px; */
+  padding: 32px;
   display: flex;
 }
 
@@ -116,4 +128,9 @@ select::-ms-expand {
 }
 select:disabled::-ms-expand {
   background: #f60;
+}
+
+.wave{
+  background-attachment: center;
+  background-repeat: no-repeat;
 }

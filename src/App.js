@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import Routes from './routes/index';
+import Dashboard from './pages/Dashboard';
 
 const App = () => (
   <BrowserRouter>
-    <Routes />
+    <Dashboard />
   </BrowserRouter>
 );
 
