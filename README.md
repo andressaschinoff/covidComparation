@@ -10,7 +10,7 @@
 
 ## :information_source: Sobre o Projeto
 
-O Covid Corporison é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
+O Covid Comporison é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
 
 ---
 
@@ -127,7 +127,15 @@ _PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependê
 
 ## :busts_in_silhouette: Contribuidores
 
-<p align="center">
+ <p align="center">
+  <a href="https://github.com/andressaschinoff">
+    <img src="https://avatars3.githubusercontent.com/u/51170291?s=460&u=2593b926590b415b2907ce40376e0c35029e9be5&v=4" title="Andressa Schinoff" width="80" height="80">
+  </a>
+
+  <a href="https://github.com/joaoskr">
+    <img src="https://avatars0.githubusercontent.com/u/17601527?s=460&u=e8b83b1b8abc9bc2b4cbcf53f9dc600760408249&v=4" title="João Deroldo" width="80" height="80">
+  </a>
+
   <a href="https://github.com/jerp86">
     <img src="https://avatars0.githubusercontent.com/u/54115624?s=460&u=36c750bc965fde8a88dedbd0aef8c985c3fde0ab&v=4" title="José Eduardo Rodrigues Pinto" width="80" height="80">
   </a>
