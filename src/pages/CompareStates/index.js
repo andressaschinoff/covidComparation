@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { format, isDate } from 'date-fns';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 import api from '../../services/api';
+import Map from '../../components/Map';
 
 import { Container, Heading, FilterContainer, Calendar, CovidList, CovidItem, Select } from './styles';
 
 const CompareStates = () => {
-  const [ufs, setUfs] = useState([]);
   const [firstUfSelected, setFirstUfSelected] = useState('');
   const [secondUfSelected, setSecondUfSelected] = useState('');
   const [firstResults, setFirstResults] = useState({});
@@ -16,28 +16,9 @@ const CompareStates = () => {
   const [error, setError] = useState('');
   const [dateSelected, setDateSelected] = useState(new Date());
 
-  useEffect(() => {
-    api.get().then((response) => {
-      const ufList = response.data.data
-        .map((item) => {
-          return {
-            id: item.uid,
-            name: item.state,
-            uf: item.uf,
-          };
-        })
-        .sort((a, b) => {
-          if (a.uf > b.uf) return 1;
-
-          return a.uf < b.uf ? -1 : 0;
-        });
-      
-      setUfs(ufList);
-    });
-  }, []);
-
   const handleFirstSelectedUf = useCallback(async (event, position) => {
-    const uf = event.target.value;
+    const uf = event.target.value ?? event.target.id;
+    console.log(uf);
 
     try {
       const response = await api.get();
@@ -96,20 +77,12 @@ const CompareStates = () => {
           <FilterContainer>
             <Select>
               <label htmlFor="uf">Selecione o 1º Estado</label>
-              <select name="uf" value={firstUfSelected} onChange={(e) => handleFirstSelectedUf(e, 1)}>
-                <option value="0">Selecione o 1º Estado</option>
-                {ufs.map((uf) => (
-                  <option key={uf.id} value={uf.uf}>{uf.name}</option>
-                ))}
-              </select>
-            
+              <Map onClick={(e) => handleFirstSelectedUf(e, 1)} />
+            </Select>
+
+            <Select>
               <label htmlFor="uf">Selecione o 2º Estado</label>
-              <select name="uf" value={secondUfSelected} onChange={(e) => handleFirstSelectedUf(e, 2)}>
-                <option value="0">Selecione o 2º Estado</option>
-                {ufs.map((uf) => (
-                  <option key={uf.id} value={uf.uf}>{uf.name}</option>
-                ))}
-              </select>
+              <Map onClick={(e) => handleFirstSelectedUf(e, 2)} />
             </Select>
 
             <Calendar>

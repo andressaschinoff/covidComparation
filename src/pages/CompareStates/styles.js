@@ -40,10 +40,10 @@ export const Heading = styled.div`
 
 export const FilterContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
-  width: 600px;
+  width: 100vw;
 `;
 
 export const Select = styled.div`
