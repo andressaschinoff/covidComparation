@@ -1,41 +1,22 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { format, isDate } from 'date-fns';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
+import Map from '../../components/Map';
 import api from '../../services/api';
 
 import { Container, Heading, FilterContainer, Calendar, CovidList, CovidItem } from './styles';
 
 const SingleDate = () => {
-  const [ufs, setUfs] = useState([]);
   const [ufSelected, setUfSelected] = useState('');
   const [results, setResults] = useState({});
   const [error, setError] = useState('');
   const [dateSelected, setDateSelected] = useState(new Date());
 
-  useEffect(() => {
-    api.get().then((response) => {
-      const ufList = response.data.data
-        .map((item) => {
-          return {
-            id: item.uid,
-            name: item.state,
-            uf: item.uf,
-          };
-        })
-        .sort((a, b) => {
-          if (a.uf > b.uf) return 1;
-
-          return a.uf < b.uf ? -1 : 0;
-        });
-      
-      setUfs(ufList);
-    });
-  }, []);
-
   const handleSelectedUf = useCallback(async (event) => {
-    const uf = event.target.value;
+    const uf = event.target.value ?? event.target.id;
+
     setUfSelected(uf);
 
     try {
@@ -91,12 +72,7 @@ const SingleDate = () => {
         )}
         
         <FilterContainer>
-          <select name="uf" value={ufSelected} onChange={handleSelectedUf}>
-            <option value="0">Selecione um Estado</option>
-            {ufs.map((uf) => (
-              <option key={uf.id} value={uf.uf}>{uf.name}</option>
-            ))}
-          </select>
+          <Map onClick={handleSelectedUf} />
 
           <Calendar>
             <DayPicker

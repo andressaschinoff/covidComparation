@@ -33,17 +33,17 @@ export const Heading = styled.div`
     margin-bottom: 16px;
   }
 
-  select {
-    margin-right: 16px;
+  select, svg {
+    margin-right: 24px;
   }
 `;
 
 export const FilterContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
-  width: 600px;
+  width: 50vw;
 `;
 
 export const CovidList = styled.div`
