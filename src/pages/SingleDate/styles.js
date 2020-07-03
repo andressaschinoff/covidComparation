@@ -32,10 +32,6 @@ export const Heading = styled.div`
   h1 {
     margin-bottom: 16px;
   }
-
-  select, svg {
-    margin-right: 24px;
-  }
 `;
 
 export const FilterContainer = styled.div`
