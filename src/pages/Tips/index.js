@@ -19,10 +19,12 @@ function Tips() {
         O vírus que causa a COVID-19 é transmitido principalmente por meio de gotículas geradas quando uma pessoa infectada tosse, espirra ou exala. Essas gotículas são muito pesadas para permanecerem no ar e são rapidamente depositadas em pisos ou superfícies.
         Você pode ser infectado ao inalar o vírus se estiver próximo de alguém que tenha COVID-19 ou ao tocar em uma superfície contaminada e, em seguida, passar as mãos nos olhos, no nariz ou na boca.
       </p>
+
       <header className="header">
         <h1>Prevenção do Vírus</h1>
         <img className="icon" src={virus} alt="Covid-19" />
       </header>
+
       <ul className="topics">
         <li>
           <img className="icon" src={washingHands} alt="Lave as mãos" />
