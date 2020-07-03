@@ -1,9 +1,9 @@
 import React from 'react';
 
-import CompareStates from '../CompareStates';
-import CompareDates from '../CompareDates';
-import SingleDate from '../SingleDate';
 import Tips from '../Tips';
+// import CompareStates from '../CompareStates';
+// import CompareDates from '../CompareDates';
+// import SingleDate from '../SingleDate';
 
 import logo from '../../assets/logo.png';
 
@@ -11,8 +11,8 @@ import { Container } from './styles';
 
 const Dashboard=() => {
   return (
-    <Container>
-      <section className="navTop">
+    <Container className="container">
+      <section className="navBar">
         <a href="#tips" className="navLink">Dicas de proteção</a>
         <a href="#compareStates" className="navLink">Comparação de Estados</a>
         <a href="#compareDates" className="navLink">Comparação de Datas</a>
@@ -21,7 +21,7 @@ const Dashboard=() => {
 
       <section className="description">
         <header className="header">
-          <img src={logo} width="300px" height="150px" alt="Covid Comparison" />
+          <img src={logo} alt="Covid Comparison" />
         </header>
 
         <h1 className="title">
@@ -35,17 +35,17 @@ const Dashboard=() => {
         <Tips />
       </section>
 
-      <section id="compareStates">
+      {/* <section id="compareStates">
         <CompareStates />
-      </section>
+      </section> */}
 
-      <section id="compareDates">
+      {/* <section id="compareDates">
         <CompareDates />
-      </section>
+      </section> */}
 
-      <section id="singleDate">
+      {/* <section id="singleDate">
         <SingleDate />
-      </section>
+      </section> */}
     </Container>
   );
 };
