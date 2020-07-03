@@ -5,6 +5,7 @@ import background from '../../assets/background.png';
 export const Container = styled.section`
   .navBar {
     position: fixed;
+    z-index: 1000;
 
     width: 100vw;
     height: 50px;

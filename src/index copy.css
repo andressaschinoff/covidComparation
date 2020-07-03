@@ -66,9 +66,9 @@ body {
   grid-template-areas: 
                   "description"
                   "tips"
+                  "singleDate"
                   "compareDates"
                   "compateStates"
-                  "singleDate"
   ;
 }
 

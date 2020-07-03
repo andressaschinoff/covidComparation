@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Tips from '../Tips';
+import SingleDate from '../SingleDate';
 // import CompareStates from '../CompareStates';
 // import CompareDates from '../CompareDates';
-// import SingleDate from '../SingleDate';
 
 import logo from '../../assets/logo.png';
 
@@ -14,9 +14,9 @@ const Dashboard=() => {
     <Container className="container">
       <section className="navBar">
         <a href="#tips" className="navLink">Dicas de proteção</a>
+        <a href="#singleDate" className="navLink">Dados por Estado</a>
         <a href="#compareStates" className="navLink">Comparação de Estados</a>
         <a href="#compareDates" className="navLink">Comparação de Datas</a>
-        <a href="#singleDate" className="navLink">Dados por Estado</a>
       </section>
 
       <section className="description">
@@ -35,16 +35,16 @@ const Dashboard=() => {
         <Tips />
       </section>
 
+      <section id="singleDate">
+        <SingleDate />
+      </section>
+
       {/* <section id="compareStates">
         <CompareStates />
       </section> */}
 
       {/* <section id="compareDates">
         <CompareDates />
-      </section> */}
-
-      {/* <section id="singleDate">
-        <SingleDate />
       </section> */}
     </Container>
   );

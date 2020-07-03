@@ -1,98 +1,54 @@
 .App {
-  grid-area: compareDates;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-flow: column wrap;
-
-  min-height: 100vh;
-  height: auto;
   
-  padding-top: 56px;
-
-  background-color: #88a8fc;
-  background-image: linear-gradient(360deg, #fff 0%, #88a8fc 90%);
 }
 
 .error-bar {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-  min-width: 558px;
-  padding: 16px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-bottom: 16px;
+  
 }
 
 .heading {
-  background: white;
-  padding: 32px;
-  display: flex;
+  
 }
 
 .heading span {
-  display: flex;
-  align-items: center;
-  background-color: #ddd;
-  padding: 0 16px;
+  
 }
 
 input {
-  min-height: 42px;
-  border: 1px solid #ccc;
-  padding: 0 16px;
 }
 
 input:nth-child(1) {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-right: none;
 }
 
 input:nth-child(3) {
-  border-right: none;
-  border-left: none;
 }
 
 button {
-  background: #ddd;
-  border: none;
-  padding: 0 16px;
-  cursor: pointer;
+  
 }
 
 .covid-list {
-  padding: 32px;
-  background-color: white;
-  max-width: 1114px;
-  margin-top: 32px;
-  display: flex;
+  
 }
 
 .covid-item h3 {
-  text-align: center;
 }
 
 .covid-item + .covid-item {
-  margin-left: 32px;
 }
 
 table {
-  border-collapse: collapse;
 }
 
 table,
 th,
 td {
-  border: 1px solid black;
-  background-color: white;
+  
 }
 
 th,
 td {
-  padding: 15px;
-  text-align: center;
+  
 }
 /* body select.select_box */
 body select {
@@ -122,9 +78,4 @@ select::-ms-expand {
 }
 select:disabled::-ms-expand {
   background: #f60;
-}
-
-.wave{
-  background-attachment: center;
-  background-repeat: no-repeat;
 }
