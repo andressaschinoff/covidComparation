@@ -1,81 +1,91 @@
 .App {
-  
-}
+  grid-area: compareDates;
 
-.error-bar {
-  
+  background-color: #fff;
+  /* background-image: linear-gradient(360deg, #88a8fc 0%, #fff 90%); */
 }
 
 .heading {
+  padding-top: 56px;
   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  width: 100%;
+}
+
+.heading h1 {
+  font-size: 21px;
+  color: #003399;
+}
+
+.heading div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  
+  flex-wrap: wrap;
 }
 
 .heading span {
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ddd;
+  min-height: 42px;
+  padding: 0 16px;
+  margin-left: 16px;
 }
 
 input {
+  min-height: 42px;
+  border: 1px solid #ccc;
+  padding: 0 16px;
 }
 
 input:nth-child(1) {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
 }
 
 input:nth-child(3) {
+  border-right: none;
+  border-left: none;
 }
 
 button {
-  
+  background: #ddd;
+  border: none;
+  padding: 0 16px;
+  cursor: pointer;
+  min-height: 42px;
 }
 
 .covid-list {
+  width: 100%;
+  margin-top: 8px;
   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .covid-item h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 18px;
+  color: #003399;
+  font-weight: bold;
 }
 
 .covid-item + .covid-item {
-}
-
-table {
-}
-
-table,
-th,
-td {
-  
-}
-
-th,
-td {
-  
-}
-/* body select.select_box */
-body select {
-  display: block;
-  padding: 10px 70px 10px 16px !important;
-  max-width: 100%;
-  min-height: 43px;
-  border: 1px solid #ccc;
-  background: url('https://i.ibb.co/b7xjLrB/selectbox-arrow.png') right center
-    no-repeat;
-  background-color: white;
-  color: #444444;
-  font-size: 12px;
-  line-height: 16px !important;
-  appearance: none;
-  /* this is must */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-/* body select.select_box option */
-body select option {
-  padding: 0 5px;
-}
-/* for IE and Edge */
-select::-ms-expand {
-  display: none;
-}
-select:disabled::-ms-expand {
-  background: #f60;
+  margin-left: 32px;
 }
