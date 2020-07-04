@@ -5,6 +5,7 @@ import api from '../../services/api';
 
 import './styles.css';
 import Map from '../../components/Map';
+import BarChart from '../../components/Charts/BarChart';
 
 function CompareDates() {
   const [beforeDate, setBeforeDate] = useState({});
@@ -114,54 +115,57 @@ function CompareDates() {
       </div>
 
       {!error && ( !!beforeDate.outputDate && !!afterDate.outputDate) && (
-        <div className="covid-list">
-          <div className="covid-item">
-            <h3>Casos anteriores {filterData && `- ${beforeDate.outputDate}`}</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Casos</th>
-                  <th>Mortes</th>
-                  <th>Suspeitos</th>
-                  <th>Descartados</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filterData && (
+        <>
+          <div className="covid-list">
+            <div className="covid-item">
+              <h3>Casos anteriores {filterData && `- ${beforeDate.outputDate}`}</h3>
+              <table>
+                <thead>
                   <tr>
-                    <td>{beforeDate.cases}</td>
-                    <td>{beforeDate.deaths}</td>
-                    <td>{beforeDate.suspects}</td>
-                    <td>{beforeDate.refuses}</td>
+                    <th>Casos</th>
+                    <th>Mortes</th>
+                    <th>Suspeitos</th>
+                    <th>Descartados</th>
                   </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-          <div className="covid-item">
-            <h3>Casos posteriores {filterData && `- ${afterDate.outputDate}`}</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Casos</th>
-                  <th>Mortes</th>
-                  <th>Suspeitos</th>
-                  <th>Descartados</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filterData && (
+                </thead>
+                <tbody>
+                  {filterData && (
+                    <tr>
+                      <td>{beforeDate.cases}</td>
+                      <td>{beforeDate.deaths}</td>
+                      <td>{beforeDate.suspects}</td>
+                      <td>{beforeDate.refuses}</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <div className="covid-item">
+              <h3>Casos posteriores {filterData && `- ${afterDate.outputDate}`}</h3>
+              <table>
+                <thead>
                   <tr>
-                    <td>{afterDate.cases}</td>
-                    <td>{afterDate.deaths}</td>
-                    <td>{afterDate.suspects}</td>
-                    <td>{afterDate.refuses}</td>
+                    <th>Casos</th>
+                    <th>Mortes</th>
+                    <th>Suspeitos</th>
+                    <th>Descartados</th>
                   </tr>
-                )}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {filterData && (
+                    <tr>
+                      <td>{afterDate.cases}</td>
+                      <td>{afterDate.deaths}</td>
+                      <td>{afterDate.suspects}</td>
+                      <td>{afterDate.refuses}</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+          <BarChart result1={beforeDate} result2={afterDate} />
+        </>
       )}
 
       <svg className="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
