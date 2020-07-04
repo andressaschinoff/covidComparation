@@ -10,18 +10,20 @@ export const Container = styled.section`
   scroll-behavior: smooth;
 
   .header {
+    padding-top: 56px;
     display: flex;
     justify-content: center;
     align-items: center;
     
+    color: #ffffff !important;
     margin: 0 16px;
     font-size: 30px;
     font-style: italic;
-    color: #ffffff;
     
 
     h1 {
       margin-right: 8px;
+      font-weight: bold;
     }
 
     @media (max-width: 325px) {
