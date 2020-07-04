@@ -5,6 +5,7 @@ import 'react-day-picker/lib/style.css';
 
 import api from '../../services/api';
 import Map from '../../components/Map';
+import LineChart from '../../components/Charts/LineChart';
 
 import { Container, Heading, FilterContainer, CovidList, CovidItem, Select } from './styles';
 
@@ -113,32 +114,10 @@ const CompareStates = () => {
       </Heading>
 
       {!error && (firstResults?.datetime) && (
-        <CovidList>
-          <CovidItem>
-            <h3>Casos do estado {firstResults.state}</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Casos</th>
-                  <th>Mortes</th>
-                  <th>Suspeitos</th>
-                  <th>Descartados</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{firstResults.cases}</td>
-                  <td>{firstResults.deaths}</td>
-                  <td>{firstResults.suspects}</td>
-                  <td>{firstResults.refuses}</td>
-                </tr>
-              </tbody>
-            </table>
-          </CovidItem>
-
-          {!error && (secondResults?.datetime) && (
+        <>
+          <CovidList>
             <CovidItem>
-              <h3>Casos do estado {secondResults.state}</h3>
+              <h3>Casos do estado {firstResults.state}</h3>
               <table>
                 <thead>
                   <tr>
@@ -150,17 +129,42 @@ const CompareStates = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{secondResults.cases}</td>
-                    <td>{secondResults.deaths}</td>
-                    <td>{secondResults.suspects}</td>
-                    <td>{secondResults.refuses}</td>
+                    <td>{firstResults.cases}</td>
+                    <td>{firstResults.deaths}</td>
+                    <td>{firstResults.suspects}</td>
+                    <td>{firstResults.refuses}</td>
                   </tr>
                 </tbody>
               </table>
             </CovidItem>
-          )}
-          
-        </CovidList>
+
+            {!error && (secondResults?.datetime) && (
+              <CovidItem>
+                <h3>Casos do estado {secondResults.state}</h3>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Casos</th>
+                      <th>Mortes</th>
+                      <th>Suspeitos</th>
+                      <th>Descartados</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{secondResults.cases}</td>
+                      <td>{secondResults.deaths}</td>
+                      <td>{secondResults.suspects}</td>
+                      <td>{secondResults.refuses}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </CovidItem>
+            )}
+            
+          </CovidList>
+          <LineChart result1={firstResults} result2={secondResults} />
+        </>
       )}
       
       <svg className="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
