@@ -1,47 +1,43 @@
 .App {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
-  min-height: 100%;
-  background-color: #eee; */
+  background-color: #fff;
   grid-area: compareDates;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-flow: column wrap;
-
-  min-height: 100vh;
-  height: auto;
-  
-  padding-top: 56px;
-
-  background-color: #88a8fc;
-  background-image: linear-gradient(360deg, #fff 0%, #88a8fc 90%);
-}
-
-.error-bar {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-  min-width: 558px;
-  padding: 16px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-bottom: 16px;
 }
 
 .heading {
-  background: white;
-  padding: 32px;
+  padding-top: 56px;
+  
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  width: 100%;
+}
+
+.heading h1 {
+  font-size: 21px;
+  color: #003399;
+}
+
+.heading div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  
+  flex-wrap: wrap;
 }
 
 .heading span {
   display: flex;
+  justify-content: center;
   align-items: center;
+
   background-color: #ddd;
+  min-height: 42px;
   padding: 0 16px;
+  margin-left: 16px;
 }
 
 input {
@@ -66,71 +62,28 @@ button {
   border: none;
   padding: 0 16px;
   cursor: pointer;
+  min-height: 42px;
 }
 
 .covid-list {
-  padding: 32px;
-  background-color: white;
-  max-width: 1114px;
-  margin-top: 32px;
+  width: 100%;
+  margin-top: 8px;
+  
   display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .covid-item h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
   text-align: center;
+  font-size: 18px;
+  color: #003399;
+  font-weight: bold;
 }
 
 .covid-item + .covid-item {
   margin-left: 32px;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-  background-color: white;
-}
-
-th,
-td {
-  padding: 15px;
-  text-align: center;
-}
-/* body select.select_box */
-body select {
-  display: block;
-  padding: 10px 70px 10px 16px !important;
-  max-width: 100%;
-  min-height: 43px;
-  border: 1px solid #ccc;
-  background: url('https://i.ibb.co/b7xjLrB/selectbox-arrow.png') right center
-    no-repeat;
-  background-color: white;
-  color: #444444;
-  font-size: 12px;
-  line-height: 16px !important;
-  appearance: none;
-  /* this is must */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-/* body select.select_box option */
-body select option {
-  padding: 0 5px;
-}
-/* for IE and Edge */
-select::-ms-expand {
-  display: none;
-}
-select:disabled::-ms-expand {
-  background: #f60;
-}
-
-.wave{
-  background-attachment: center;
-  background-repeat: no-repeat;
 }
