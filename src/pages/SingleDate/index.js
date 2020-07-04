@@ -4,6 +4,7 @@ import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 import Map from '../../components/Map';
+import PieChart from '../../components/Charts/PieChart';
 import api from '../../services/api';
 
 import { Container, Heading, FilterContainer, CovidList } from './styles';
@@ -101,26 +102,29 @@ const SingleDate = () => {
       </Heading>
 
       {!error && (results?.datetime) && (
-        <CovidList>
-          <table>
-            <thead>
-              <tr>
-                <th>Casos</th>
-                <th>Mortes</th>
-                <th>Suspeitos</th>
-                <th>Descartados</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{results.cases}</td>
-                <td>{results.deaths}</td>
-                <td>{results.suspects}</td>
-                <td>{results.refuses}</td>
-              </tr>
-            </tbody>
-          </table>
-        </CovidList>
+        <>
+          <CovidList>
+            <table>
+              <thead>
+                <tr>
+                  <th>Casos</th>
+                  <th>Mortes</th>
+                  <th>Suspeitos</th>
+                  <th>Descartados</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{results.cases}</td>
+                  <td>{results.deaths}</td>
+                  <td>{results.suspects}</td>
+                  <td>{results.refuses}</td>
+                </tr>
+              </tbody>
+            </table>
+          </CovidList>
+          <PieChart results={results} />
+        </>
       )}
 
       <svg className="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
