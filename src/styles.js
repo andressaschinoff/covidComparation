@@ -25,6 +25,8 @@ export default createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    outline: 0;
+    box-sizing: border-box;
   }
 
   /* HTML5 display-role reset for older browsers */
@@ -57,21 +59,29 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', 'Ubuntu', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  body, input, button {
+    font-family: 'Roboto', 'Ubuntu', sans-serif;
+    font-size: 16px;
+  }
+
+  button {
+    cursor: pointer;
   }
 
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto 100vh 100vh 100vh;
+    grid-template-rows: 100vh auto auto auto auto;
     grid-template-areas: 
                     "description"
                     "tips"
                     "singleDate"
+                    "compareStates"
                     "compareDates"
-                    "compateStates"
     ;
   }
 
@@ -89,10 +99,31 @@ export default createGlobalStyle`
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
-    width: 90vw;
     padding: 8px;
     border-radius: 4px;
     margin-bottom: 16px;
+  }
+
+  table {
+    box-shadow: 0px 6px 11px 0px rgba(0,0,0,0.26);
+    
+    thead {
+      background-color: #003399;
+      color: #fff;
+
+      font-weight: bold;
+    }
+
+    tbody {
+      background-color: #fff;
+      color: #003399;
+    }
+  }
+
+  th,
+  td {
+    padding: 15px;
+    text-align: center;
   }
 
   .calendar {
@@ -114,10 +145,6 @@ export default createGlobalStyle`
       padding-bottom: 0;
       position: unset;
     }
-    /* .DayPicker,
-    .DayPicker-Month {
-      width: 100%;
-    } */
     .DayPicker-Month {
       border-collapse: separate;
       border-spacing: 8px;
