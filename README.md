@@ -132,10 +132,26 @@ _PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependê
     <img src="https://avatars3.githubusercontent.com/u/51170291?s=460&u=2593b926590b415b2907ce40376e0c35029e9be5&v=4" title="Andressa Schinoff" width="80" height="80">
   </a>
 
+   <a href="https://github.com/eRodriguesSantana">
+    <img src="https://avatars0.githubusercontent.com/u/27317860?s=400&u=c8bb4fa75afb3238896210acb3e8ccbd4b191d6e&v=4" title="Eduardo Santana" width="80" height="80">
+  </a>
+
+  <a>
+
+   <a href="https://github.com/juliastefanoni">
+    <img src="https://avatars1.githubusercontent.com/u/53796153?s=400&u=5fb4f4f34f78ee55148b7a69c269339105d68408&v=4" title="Julia Stefanoni" width="80" height="80">
+  </a>
+
+  <a>
+
+   <a href="https://github.com/ndesouz1">
+    <img src="https://avatars1.githubusercontent.com/u/54290219?s=400&u=002f16a59edd2722d0048b9096dc779a6f4b80ec&v=4" title="Nayara de Souza" width="80" height="80">
+  </a>
+
   <a href="https://github.com/joaoskr">
     <img src="https://avatars0.githubusercontent.com/u/17601527?s=460&u=e8b83b1b8abc9bc2b4cbcf53f9dc600760408249&v=4" title="João Deroldo" width="80" height="80">
   </a>
-
+<br />
   <a href="https://github.com/jerp86">
     <img src="https://avatars0.githubusercontent.com/u/54115624?s=460&u=36c750bc965fde8a88dedbd0aef8c985c3fde0ab&v=4" title="José Eduardo Rodrigues Pinto" width="80" height="80">
   </a>
@@ -156,5 +172,5 @@ _PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependê
 ---
 
 <h4 align="center">
-  Feito com ❤️ por Jerp86 👋️ <a href="mailto:jerp4@hotmail.com">Entre em contato!</a>
+  Feito com ❤️ por Valéria Melo 👋️ <a href="mailto:valleriademelo@gmail.com">Entre em contato!</a>
 </h4>
