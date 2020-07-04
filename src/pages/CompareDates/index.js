@@ -77,8 +77,8 @@ function CompareDates() {
 
   return (
     <div className="App">
-      {error && <div className="error-bar">{error}</div>}
       <div className="heading">
+        {error && <div className="error-bar">{error}</div>}
         {!beforeDate.outputDate ? (<h1> Casos por Estado</h1>) : (
           <h1>
             Casos do estado {beforeDate.state} nos dias {beforeDate.outputDate} e {afterDate.outputDate}
@@ -163,8 +163,10 @@ function CompareDates() {
                 </tbody>
               </table>
             </div>
+            <div className="covid-item">
+              <BarChart result1={beforeDate} result2={afterDate} />
+            </div>
           </div>
-          <BarChart result1={beforeDate} result2={afterDate} />
         </>
       )}
 

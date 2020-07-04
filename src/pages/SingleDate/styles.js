@@ -28,6 +28,8 @@ export const FilterContainer = styled.div`
 `;
 
 export const CovidList = styled.div`
+  width: 100%;
+  
   display: flex;
   justify-content: center;
   align-items: center;

@@ -162,8 +162,8 @@ const CompareStates = () => {
               </CovidItem>
             )}
             
+            <LineChart result1={firstResults} result2={secondResults} />
           </CovidList>
-          <LineChart result1={firstResults} result2={secondResults} />
         </>
       )}
       

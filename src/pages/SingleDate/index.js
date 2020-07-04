@@ -7,7 +7,7 @@ import Map from '../../components/Map';
 import PieChart from '../../components/Charts/PieChart';
 import api from '../../services/api';
 
-import { Container, Heading, FilterContainer, CovidList } from './styles';
+import { Container, Heading, FilterContainer, CovidList, CovidItem } from './styles';
 
 const SingleDate = () => {
   const [ufSelected, setUfSelected] = useState('');
@@ -102,8 +102,8 @@ const SingleDate = () => {
       </Heading>
 
       {!error && (results?.datetime) && (
-        <>
-          <CovidList>
+        <CovidList>
+          <CovidItem>
             <table>
               <thead>
                 <tr>
@@ -122,9 +122,9 @@ const SingleDate = () => {
                 </tr>
               </tbody>
             </table>
-          </CovidList>
-          <PieChart results={results} />
-        </>
+          </CovidItem>
+            <PieChart results={results} />
+        </CovidList>
       )}
 
       <svg className="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -132,6 +132,6 @@ const SingleDate = () => {
       </svg>
     </Container>
   );
+  
 }
-
 export default SingleDate;

@@ -1,8 +1,6 @@
 .App {
-  grid-area: compareDates;
-
   background-color: #fff;
-  /* background-image: linear-gradient(360deg, #88a8fc 0%, #fff 90%); */
+  grid-area: compareDates;
 }
 
 .heading {

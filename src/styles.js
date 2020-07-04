@@ -126,6 +126,10 @@ export default createGlobalStyle`
     text-align: center;
   }
 
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+
   .calendar {
     width: 300px;
 
