@@ -2,8 +2,8 @@ import React from 'react';
 
 import Tips from '../Tips';
 import SingleDate from '../SingleDate';
-// import CompareStates from '../CompareStates';
-// import CompareDates from '../CompareDates';
+import CompareStates from '../CompareStates';
+import CompareDates from '../CompareDates';
 
 import logo from '../../assets/logo.png';
 
@@ -39,13 +39,13 @@ const Dashboard=() => {
         <SingleDate />
       </section>
 
-      {/* <section id="compareStates">
+      <section id="compareStates">
         <CompareStates />
-      </section> */}
+      </section>
 
-      {/* <section id="compareDates">
+      <section id="compareDates">
         <CompareDates />
-      </section> */}
+      </section>
     </Container>
   );
 };

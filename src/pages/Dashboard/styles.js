@@ -43,7 +43,7 @@ export const Container = styled.section`
       justify-content: center;
       align-items: center;
 
-      margin-top: 16px;
+      margin-top: 24px;
 
       img {
         width: 300px;
@@ -52,7 +52,7 @@ export const Container = styled.section`
     }
 
     .title{
-      margin-left: 20px;
+      margin-left: 24px;
       font-size: 30px;
       font-style: italic;
       color: #253ac6;
