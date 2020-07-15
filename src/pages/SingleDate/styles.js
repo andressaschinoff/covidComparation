@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
   background: #61fcc3;
   grid-area: singleDate;
+  scroll-behavior: smooth;
 `;
 
 export const Heading = styled.div`

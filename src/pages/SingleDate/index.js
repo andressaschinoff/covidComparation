@@ -63,7 +63,7 @@ const SingleDate = () => {
   }, [ufSelected]);
 
   return (
-    <Container className="container">
+    <Container>
       <Heading>
         {error && <div className="error-bar" >{error}</div>}
         {!ufSelected ? (<h1> Casos por Estado</h1>) : (

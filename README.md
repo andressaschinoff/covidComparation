@@ -1,53 +1,99 @@
- <p align="center"><img src= "https://user-images.githubusercontent.com/59574875/85342988-34c1e980-b4c2-11ea-99e1-47aa65591289.JPG"></p>
+ <p align="center">
+  <img src= "https://user-images.githubusercontent.com/59574875/85342988-34c1e980-b4c2-11ea-99e1-47aa65591289.JPG" />
+  <h1 align="center">Covid Comparison</h1>
+</p>
 
 ---
 
-<p align="center"> <img src="https://img.shields.io/static/v1?label=React&message=framework&color=blue&style=for-the-badge&logo=React"/>
-<img src="https://img.shields.io/static/v1?label=JavaScript&message=language&color=blue&style=for-the-badge&logo=JavaScript"/>
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=React&message=framework&color=blue&style=plastic&logo=React" />
+  <img src="https://img.shields.io/static/v1?label=JavaScript&message=language&color=blue&style=plastic&logo=JavaScript" />
+  
+  <img alt="GitHub" src="https://img.shields.io/github/license/andressaschinoff/covidComparation?style=plastic">
 </p>
+
+---
+
+<h3 align="center">
+  <a href="#information_source-sobre-o-projeto">Sobre</a> |
+  <a href="#interrobang-motivo">Motivo</a> |
+  <a href="#nut_and_bolt-funcionalidades">Funcionalidades</a> |
+  <a href="#books-linguagens-dependencias-e-libs-utilizadas">Linguagens, dependencias e libs utilizadas</a>
+</h3>
+<h3 align="center">
+  <a href="#running-demonstração-da-aplicação">Demostração da Aplicação</a> |
+  <a href="#package-como-baixar-o-projeto">Como baixar o projeto</a> |
+  <a href="#link-como-contribuir">Como contribuir</a>
+</>
+<h3 align="center">
+  <a href="#recycle-como-atualizar-seu-fork">Como atualizar seu fork</a> |
+  <a href="#busts_in_silhouette-contribuidores">Contribuidores</a>
+</h3>
 
 ---
 
 ## :information_source: Sobre o Projeto
 
-O Covid Comporison é uma aplicação que visa realizar uma amostragem do avanço da Covid 19, nos Estados brasileiros. Além disso a aplicação possui conteúdo informativo, e um ChatBot para auto exame do Covid - 19.
+O Covid Comparison é uma aplicação que visa realizar uma amostragem do avanço da Covid-19, nos estados brasileiros.
 
 ---
 
-> Status do Projeto: Em desenvolvimento :warning:
+> #### :construction: Covid Comparison :rocket: Em desenvolvimento :construction:
 
 ---
 
 ## :interrobang: Motivo
 
 Levando em consideração o cenário de Pandemia, e a preocupação constante devido ao aumento da curva de contágio do Vírus, desenvolvemos uma aplicação Web para trazer esses dados, que se atualizam em tempo real.
+
 O grande intuito é amparar à população em meio a esta situação de crise de Saúde Pública através de um Portal Web com ferramentas que apresentem informações da atual situação do contágio em todo o território nacional.
 
 ---
 
-## Funcionalidades
+## :nut_and_bolt: Funcionalidades
 
-<p> ✔️ Funcionalidade 1 - Page informativa com cuidados para evitar o contagio e sintomas do Covid - 19.</p>
+<p> ✔️ Funcionalidade 1 - Page informativa com cuidados para evitar o contagio e sintomas do Covid-19.</p>
 
-<p> ✔️ Funcionalidade 2 - Filtro com número pessoas infectadas em todo o território nacional.</p>
+<p> ✔️ Funcionalidade 2 - Filtro demostrativo de um estado brasileiros em data única. </p>
 
 <p> ✔️ Funcionalidade 3 - Filtro comparativo entre os estados brasileiros. </p>
 
+<p> ✔️ Funcionalidade 4 - Filtro comparativo entre datas distintas de um estado brasileiro. </p>
+
 ---
 
-## :rocket: Linguagens, dependencias e libs utilizadas 📚
+## :books: Linguagens, dependencias e libs utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - [ReactJS](https://reactjs.org/)
+- [Axios](https://github.com/axios/axios)
+- :calendar: [react-day-picker](https://react-day-picker.js.org/)
+- :bar_chart: [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2)
+- [Chart.js](https://www.chartjs.org/)
+- :clock2: [date-fns](https://date-fns.org/)
+- :nail_care: [Styled Components](https://styled-components.com/)
+
+### Padronização de código
 
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - :mouse: [Editor Config](https://editorconfig.org/)
 
+### IDE
+
 - [Visual Studio Code](https://code.visualstudio.com/)
 
 ---
 
-## Layout ou Deploy da Aplicação 💨 </h1>
+## :running: Demonstração da Aplicação
+
+Você pode utilizar a aplicação em: https://jerp86.github.io/covidComparation/
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/54115624/87580092-51aaa080-c6ad-11ea-867d-277b713f1479.png" weight="300" height="300" />
+</p>
+
 
 ---
 
@@ -57,7 +103,7 @@ Para copiar o projeto, utilize os comandos:
 
 ```bash
   # Clonar o repositório
-  ❯ git clone https://github.com/Tech-Ninjas-DIOX/covidComparation.git
+  ❯ git clone https://github.com/andressaschinoff/covidComparation
 
   # Entrar no diretório
   ❯ cd covidComparation
@@ -95,7 +141,7 @@ _PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependê
 - Faça um clone do seu respositório gerado do fork:
   - `❯ git clone https://github.com/SEU_USUARIO/covidComparation`
 - Antes de começar a trabalhar, adicione um novo remote; pode chamá-lo de _"upstream"_:
-  - `❯ git remote add upstream https://github.com/Tech-Ninjas-DIOX/covidComparation`
+  - `❯ git remote add upstream https://github.com/andressaschinoff/covidComparation`
 - Obtenha as alterações mais recentes do upstream para o repositório local:
   - `❯ git pull upstream master`
 - Crie uma branch com sua feature:
@@ -110,7 +156,7 @@ _PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependê
 
 ---
 
-## :recycle: Como atualizar seu fork com as mudanças do original
+## :recycle: Como atualizar seu fork
 
 - Certifique-se de que você está no branch master:
   - `❯ git checkout master`
@@ -119,7 +165,7 @@ _PS: Caso utilize o NPM, apague o arquivo `yarn.lock` para ter todas as dependê
 - Leve as alterações do seu repositório local para a _"origem"_:
   - `❯ git push origin master`
 
-\*PS: Talvez você precise forçar um push para o seu próprio repositório do Github. Você pode fazer isso com:
+_PS: Talvez você precise forçar um push para o seu próprio repositório do Github. Você pode fazer isso com:_
 
 - `❯ git push -f origin master`
 
