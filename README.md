@@ -18,16 +18,16 @@
   <a href="#information_source-sobre-o-projeto">Sobre</a> |
   <a href="#interrobang-motivo">Motivo</a> |
   <a href="#nut_and_bolt-funcionalidades">Funcionalidades</a> |
-  <a href="books-linguagens-dependencias-e-libs-utilizadas">Linguagens, dependencias e libs utilizadas</a>
+  <a href="#books-linguagens-dependencias-e-libs-utilizadas">Linguagens, dependencias e libs utilizadas</a>
 </h3>
 <h3 align="center">
-  <a href="running-Demostracao-da-aplicacao">Demostração da Aplicação</a> |
-  <a href="packpackage-como-baixar-o-projeto">Como baixar o projeto</a> |
-  <a href="link-como-contribuir">Como contribuir</a>
+  <a href="#running-demonstração-da-aplicação">Demostração da Aplicação</a> |
+  <a href="#package-como-baixar-o-projeto">Como baixar o projeto</a> |
+  <a href="#link-como-contribuir">Como contribuir</a>
 </>
 <h3 align="center">
-  <a href="recycle-como-atualizar-seu-fork">Como atualizar seu fork</a> |
-  <a href="busts_in_silhouette-contribuidores">Contribuidores</a>
+  <a href="#recycle-como-atualizar-seu-fork">Como atualizar seu fork</a> |
+  <a href="#busts_in_silhouette-contribuidores">Contribuidores</a>
 </h3>
 
 ---
@@ -86,7 +86,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ---
 
-## :running: Demostração da Aplicação
+## :running: Demonstração da Aplicação
 
 Você pode utilizar a aplicação em: https://jerp86.github.io/covidComparation/
 
