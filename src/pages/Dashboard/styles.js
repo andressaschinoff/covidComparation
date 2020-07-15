@@ -95,4 +95,8 @@ export const Container = styled.section`
       }
     }
   }
+
+  #tips, #singleDate, #compareStates, #compareDates {
+    scroll-behavior: smooth;
+  }
 `;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
   background-color: #28ecce;
   grid-area: compareStates;
+  scroll-behavior: smooth;
 `;
 
 export const Heading = styled.div`
